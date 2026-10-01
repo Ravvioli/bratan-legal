@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bratan — privacy policy</title><meta name="description" content="bratan privacy policy and publisher contact details">
+<style>body{margin:0;background:#050505;color:#f5f5f5;font:16px/1.7 system-ui,sans-serif}main{max-width:760px;margin:auto;padding:32px 20px}a{color:inherit;text-underline-offset:4px}nav{display:flex;flex-wrap:wrap;gap:20px;border-bottom:1px solid #303030;padding-bottom:20px}h1{font-size:28px}pre{font:inherit;white-space:pre-wrap;overflow-wrap:anywhere}footer{border-top:1px solid #303030;padding-top:20px;margin-top:32px}</style>
+</head><body><main><nav aria-label="legal navigation"><a href="./privacy.html">privacy</a><a href="./terms.html">terms</a><a href="./support.html">support</a></nav>
+<h1>bratan — privacy policy</h1><pre>privacy policy
+
+last updated: October 1, 2026
+
+1. who is responsible
+
+bratan is published by Vladyslava Filippova.
+postal address: 25-70 41st St, 2G, Long Island City, NY 11103, United States.
+privacy and support contact: hello@yasno.us.
+
+2. the short version
+
+bratan is an offline workout tracker. there is no bratan account or training
+server, no analytics or advertising, and no tracking across apps or websites.
+your training database stays in this app's private storage on your device.
+the app does not automatically upload that database to iCloud.
+
+optional connections are Apple Health, App Store purchases, and crash reports
+if enabled in a build that supports them. you can also export or share files.
+these actions are described below.
+
+3. local records
+
+the app stores workouts, sessions, sets, reps, lifted weights, distances,
+durations, notes, routines, weekly plans, personal records, progress statistics,
+body-weight readings you enter, training preferences and settings in SQLite.
+when you choose to import Apple Health history during onboarding, the dates
+and durations of past strength workouts are saved locally for the calendar.
+heart-rate samples are read for display and are not saved in the database.
+
+the operating system isolates the app's storage. bratan does not add its own
+database encryption beyond the device's file protection. access to an unlocked
+device and its file system may permit access to these records.
+
+4. backups and recovery
+
+automatic CloudKit uploads are disabled because the database contains personal
+health and fitness records. on iOS, the app excludes its documents and
+application-support storage from automatic device backups before opening the
+database. a manual copy is needed to recover after uninstalling the app,
+losing the phone, or clearing its storage.
+
+"create backup" creates a complete database snapshot in temporary storage and
+opens the system share sheet. it includes body-weight readings and any locally
+imported Apple Health workout dates. choose a destination you trust. bratan
+does not select a cloud destination or upload the file on its own. a file you
+choose to save in a cloud service is then handled by that service under its
+own terms. temporary files may be reclaimed by the operating system.
+
+existing CloudKit copies from an earlier build are not silently deleted. you
+can find, download and restore them, or delete them from "backup &amp; transfer".
+this recovery check uses your signed-in iCloud account and contacts Apple;
+it does not send new training records. old copies remain in the private
+iCloud.app.bratan container until you delete them. they may contain the full
+database, backup time, schema version, workout count and an installation
+identifier. uninstalling bratan does not delete these old cloud copies.
+
+restoring a copy replaces local records only after confirmation. premium
+access is checked with the App Store and is not inherited from a backup.
+
+5. Apple Health
+
+Apple Health is optional and iOS-only. importing past workout days during
+onboarding requests read access to workouts, without heart-rate or write
+permission. those dates and durations are used to populate your calendar.
+
+when you enable "sync workouts to apple health", bratan requests workout
+write/read access and heart-rate read access. it writes the start and end of
+finished strength workouts and reads heart-rate samples for the session's
+average and peak. it does not send Health data to a bratan server, Sentry,
+advertisers or analytics providers. health and fitness records are not
+automatically uploaded to iCloud. full manual backups can include imported
+workout dates as explained above.
+
+permission is controlled by you in Apple's sheet. you can revoke it in iOS
+settings &gt; privacy &amp; security &gt; health &gt; bratan, or in the Health app.
+turning workout sync off stops further session reads and writes. calendar
+dates imported earlier remain local until you delete the app or replace the
+database. workouts already written to Health can be deleted in the Health app.
+
+6. CSV and sharing
+
+"export data (csv)" creates workout-history and routine CSV files in temporary
+storage and opens the system share sheet. CSV is a transfer format, not a
+complete backup: it does not include all settings, body-weight readings,
+notes or other database records. use a full manual backup for lossless recovery.
+bratan does not record the destination you select. files you send to another
+person or service are under your control and their privacy terms.
+
+7. optional error reports
+
+"send crash reports" is off by default and is available only in builds
+configured for it. when you enable it, the Dart Sentry SDK sends application
+error diagnostics to Functional Software, Inc. (Sentry). reports contain
+an individual report identifier and timestamp, the app version/build,
+exception types and code stack locations. exception text, local variables,
+user/install identifiers, breadcrumbs, screenshots, request data and arbitrary
+contexts are removed. the app does not start Sentry's native crash SDK,
+session tracking, replay or performance tracing. native process crashes
+are not reported by this feature.
+
+reports do not contain your training records, Apple Health data, database,
+CSV files, name or email address. network providers necessarily receive the
+connection's IP address; it is not deliberately added to the report payload.
+turning reporting off stops accepting new reports immediately and closes the
+SDK after any startup/closure operation already in progress. a request already
+sent cannot be recalled by the switch.
+
+diagnostics are kept for investigating and resolving application faults and
+expire under the configured Sentry retention policy. contact hello@yasno.us
+for a privacy or deletion request. there is no account or installation ID to
+locate all reports from a person; an individual report can be located if its
+report identifier is available. processing may occur outside your country;
+Sentry's data-processing terms apply to these transfers.
+
+an error log is also kept locally whether or not remote reporting is enabled.
+database error messages are redacted in that log. other error text may contain
+input you supplied, so inspect a log before sharing it. you can share or clear
+it in about &gt; diagnostics. it leaves the phone only when you share it.
+
+8. the one-time purchase
+
+bratan pro is an optional non-consumable App Store purchase. it is not a
+subscription and does not renew. Apple handles pricing, payment, refunds,
+verification and restoration under its own terms. the app checks StoreKit
+transactions and current purchase access; training data is not included.
+bratan does not receive your card details or create a billing account.
+a local premium flag allows offline use. a confirmed revoked or refunded
+purchase removes the paid access; an unavailable store does not erase a
+previously verified offline entitlement. purchase access follows your Apple
+store account and can be restored on the premium screen or in settings.
+
+9. your choices and rights
+
+local records are used to provide the tracking features you request. optional
+error reporting is based on your consent, which you can withdraw in settings.
+we do not sell training data or use it for advertising. if you contact us, we
+use the information you provide to respond and keep it as needed to handle
+your request and applicable obligations.
+
+where applicable, you may request access, correction, deletion, restriction,
+portability or objection, withdraw consent, or complain to your local data
+protection authority. most training records are controlled directly on your
+device. use CSV for transferring workouts/routines, or a manual backup for
+the complete database. routines and settings can be edited in the app;
+finished sessions can be deleted from history or the calendar, and individual
+weigh-ins can be deleted in progress. deleting the app removes its local
+storage, but does not remove files you exported, old CloudKit copies or
+workouts written to Apple Health. delete those copies at their destinations.
+send other privacy requests to hello@yasno.us.
+
+10. children and fitness information
+
+bratan is not directed at children under 13 and does not knowingly collect
+personal information from them. it is a general fitness log and calculator,
+not medical advice, diagnosis or treatment. suggested weights and programmes
+are based on records and preferences you enter; seek appropriate professional
+advice about your own health and ability to train.
+
+11. changes and contact
+
+the date above changes when this policy is updated. a new version ships with
+the app and the public policy page. material changes to optional reporting
+will be explained and new consent requested when required.
+
+Vladyslava Filippova
+25-70 41st St, 2G, Long Island City, NY 11103, United States
+hello@yasno.us</pre>
+<footer><a href="mailto:hello@yasno.us">hello@yasno.us</a></footer></main></body></html>
